@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/recipe_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+recipeService:
+  getAllRecipeUrlTemplate: http://localhost:8081/api/recipe
+  addRecipeUrlTemplate: http://localhost:8081/api/addRecipe
+  updateRecipeUrlTemplate: http://localhost:8081/api/updateRecipe
+  deleteRecipeUrlTemplate: http://localhost:8081/api/recipe/{recipeId}
+imageService:
+  getImageById: http://localhost:8083/image/getImageByRecipeId/{id}
+  addImage: http://localhost:8083/image/addImage
+CommentService:
+  addNewComment: http://localhost:8082/comment/addComment
+  getAllCommentByUser: http://localhost:8082/comment/getAllComments/{userId}
+  deleteComment: http://localhost:8082/comment/deleteComment/{commentId}
